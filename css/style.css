@@ -1,0 +1,736 @@
+
+/* ―――――――――――――――――――――————――――————
+　　　　全体構造
+ ―――――――――――――――――――――————――――———— */
+
+ /* “scroll-behavior”プロパティはナビゲーション時のスクロールの挙動を指定するプロパティで、値に“smooth”と指定するとウェブページ内でのナビゲーション時にスムーズスクロールで移動する  */
+
+html {
+     scroll-behavior: smooth;
+}
+
+/* 　↑　ページ内リンクスムーズスクロール */
+
+
+body {
+    font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro','メイリオ', 'Meiryo', '游ゴシック', 'Yu Gothic', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif ;
+    color: #4F4F4F;
+    background-color: #fff;
+    font-size: 16px;
+    background-image: url(../images/bodybkimg.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    display: none;
+}
+
+/*———　 ↓　ヘッダー　———*/
+header{
+    background-image: url(../images/headerimage.png);
+    background-repeat: repeat-x;
+    height: 220px;
+    margin-bottom: 20px;
+}
+header .inner {
+    width: 1080px;
+    height: 220px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 20px 0 0 0;
+}
+header h1 a{
+    width: 380px;
+    height: 120px;
+}
+header .logolang {
+    width: 1080px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.logolang .language {
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+
+/*———　 ↓　ナビゲーション　——— */
+
+header nav {
+    margin: 10px auto 0 auto;
+}
+header nav ul.mainnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav ul.mainnav>li {
+    margin-right: 24px;
+    position: relative;
+}
+header nav ul ul {
+    position: absolute;
+    opacity: 0;
+    transition: all 0.2s;
+    height: 0;
+    overflow: hidden;
+}
+
+header nav ul.mainnav>li:hover ul {
+    opacity: 1;
+    height: 240px;
+}
+
+header nav ul.mainnav>li:last-child {
+    margin-right: 0;
+}
+/* ----↓　パンくずリスト　　------- */
+
+.pankuzu {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.pankuzu img {
+    width: 20px;
+}
+.pankuzu ul {
+    display: flex;
+    align-items: center;
+}
+.pankuzu ul li {
+    margin-left: 10px;
+}
+
+.pankuzu ul li a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+}
+.pankuzu ul li p {
+    margin-left: 10px;
+}
+
+.decoration {
+    border-bottom: 1px solid #4F4F4F;
+}
+
+
+
+
+/* ----- ページ区切り線 ----- */
+
+.line {
+    width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    border-bottom: 2px dotted #4F4F4F;
+}
+
+
+/*———　 ↓　メイン領域 　———*/
+div .chuo {
+    width: 1080px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+}
+main {
+    width: 820px;
+}
+
+/*———　 ↓　サイド　——— */
+
+aside {
+    width: 220px;
+    padding: 20px 0 20px 0;
+}
+aside ul li {
+    width: 220px;
+    margin-bottom: 20px;
+}
+
+/*——— 　↓　フッター 　———*/
+
+footer {
+    margin-top: 140px;
+    height: 160px;
+    background-color: #FFE7B8;
+    text-align: center;
+    padding-top: 40px;
+}
+footer .footerp {
+    margin-bottom: 20px;
+}
+footer address {
+    font-size: 14px;
+    line-height: 1.4;
+}
+footer .footerp p {
+    font-size: 14px;
+    line-height: 1.4;
+}
+footer small {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+/* トップに戻るボタン */
+.back-top {
+    position: fixed;
+    bottom: 220px;
+    left: 50%;
+    display: none;
+    margin-left: 400px;
+}
+.back-top a{
+    font-size: 60px;
+    color: #E7C3F6;
+}
+
+
+/* ―――――――――――――――――――――————――――————
+　　　　　　トップページ
+ ―――――――――――――――――――――————――――———— */
+
+/* ———　↓　メイン 　———*/
+ main .mainimage img {
+    width: 820px;
+    height: 420px;
+    margin-bottom: 20px;
+}
+article.index-kocho{
+    margin-bottom: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 820px;
+    height: 420pxs;
+    text-align: center;
+    background-color: #E3F7FF;
+    border-radius: 5px;
+    flex-wrap: wrap;
+}
+article.index-kocho h1 {
+    margin: 20px auto 20px auto;
+    font-size: 22px;
+    font-weight: bolder;
+}
+article.index-kocho img {
+    width: 140px;
+    height: 140px;
+    border-radius: 90px;
+}
+article.index-kocho .koucho{
+    width: 680px;
+    height: 160px;
+    background-color: #fff;
+    padding: 20px 30px 20px 30px;
+    margin: 20px auto 20px auto;
+}
+article.index-kocho .koucho h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+article.index-kocho .koucho p {
+    line-height: 1.4;
+    text-align: justify;
+}
+
+
+/* ———　↓セクション 　———*/
+ .mainbottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.mainbottom section {
+    width: 380px;
+    height: 130px;
+    padding:20px;
+    text-align: center;
+    border-radius: 10px;
+}
+.mainbottom section h2 {
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.mainbottom section a {
+    text-decoration: none;
+    display: block;
+    color: #000;
+}
+.mainbottom section p {
+    font-size: 14px;
+    text-align: left;
+    margin-left: 10px;
+    line-height: 1.4;
+
+}
+.section-text {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.section-text.mainaccess{
+    padding-left: 0px;
+    padding-right: 0;
+
+}
+.section-text img {
+    width: 80px;
+    height: 80px;
+}
+.border {
+    border:1px solid #000;
+}
+.section-hover {
+    background-color:#F2F2F2;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all  0.3s ease;
+}
+.section-hover:hover {
+    background-color: #E6F3D3;
+}
+
+/* ―――――――――――――――――――――————――――————
+　　　　　　　アクセスマップ
+ ―――――――――――――――――――――————――――———— */
+
+.access-map {
+    text-align: center;
+    width: 840px;
+}
+ .access-map h1 {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 20px;
+     font-weight: bolder;
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom: 20px;
+ }
+.access-map th {
+    background-color: #FCFECB;
+    margin-bottom: 18px;
+    font-weight: lighter;
+}
+
+.access-map tr:nth-child(even) th{
+    background-color: #FFEBB4;
+}
+.access-map td {
+    text-align: left;
+}
+.access-map table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.access-map iframe.googlemap{
+    border: 20px solid #FCFECB;
+}
+
+.access-map img.accesmapcar {
+    width: 60px;
+    margin-right: 10px;
+}
+/* ―――――――――――――――――――――————――――————
+　　　　　　AASOについて
+ ―――――――――――――――――――――————――――———— */
+
+ .about-message {
+     padding: 30px;
+     border: 20px solid #FFC3ED;
+     border-radius: 30px;
+     margin-bottom: 20px;
+ }
+ .about-message h2 {
+     font-size: 24px;
+     font-weight: bold;
+     line-height: 1.4;
+     margin-bottom: 20px;
+ }
+ .about-message p {
+     text-align: justify;
+     line-height: 1.4;
+ }
+
+
+ /* ---- ↓　セクション------ */
+
+ .about-section {
+     height: 140px;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     padding-left: 20px;
+     padding-right: 20px;
+     margin-bottom: 30px;
+ }
+
+ .about-section section {
+     width: 340px;
+     height:120px ;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color:#F2F2F2;
+     border-radius: 10px;
+     padding: 10px;
+     -webkit-transition: all 0.3s ease;
+     -moz-transition: all 0.3s ease;
+     -o-transition: all 0.3s ease;
+     transition: all  0.3s ease;
+ }
+
+.about-section a {
+
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+ }
+.about-section section img {
+     width: 80px;
+     height: 80px;
+     margin-right: 20px;
+}
+
+.about-section section p {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+/* ----- AASOのあゆみ ----- */
+.about-ayumi:hover {
+    background-color: #FCFECB;
+}
+
+
+/* ----- 職員紹介 ----- */
+.teachers-vision:hover {
+    background-color: #EBFCFF;
+    
+}
+
+/* -----　ビジョン ------- */
+
+.vision {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.vision .vision-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.vision .vision-title img {
+    width: 50px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.vision h1 {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+
+.vision li {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+ /* -----　AASOの概要　----- */
+
+ caption {
+     text-align: center;
+     font-size: 20px;
+     line-height: 1.4;
+     padding: 5px;
+     margin-bottom: 20px;
+     font-weight: bolder;
+ }
+ table {
+    border-spacing: 10px;
+    border-collapse: separate;
+ }
+
+ table th {
+     width: 240px ;
+     background-color: #E6F3D3 ;
+     text-align: center;
+     padding: 15px;
+     line-height: 1.2;
+     vertical-align: middle;
+     font-weight: bolder;
+     font-size: 18px;
+
+ }
+table td {
+    padding: 15px;
+    vertical-align: middle;
+    line-height: 1.2;
+
+}
+
+.about-table {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+ 
+/* ―――――――――――――――――――――————――――————
+　　　　　　職員のご紹介
+ ―――――――――――――――――――――————――――———— */
+.shokuin-mainimage {
+    margin-bottom: 20px;
+}
+
+.shokuin-message{
+     padding: 20px;
+}
+
+/* ------ 職員紹介テキスト----- */
+.shokuin-message h1 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+ }
+ .shokuin-message h2{
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+ }
+ .shokuin-message p {
+     text-align: justify;
+     padding-left: 20px;
+     padding-right: 20px;
+     line-height: 1.2;
+ }
+
+
+
+/* -----職員 顔写真一覧------ */
+
+.shokuin {
+    background-image: linear-gradient(to top, #FEADA6 0%,#FEF9D7  100%);
+    border-radius: 20px;
+    width: 820px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+
+.shokuin-danraku{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.shokuin-danraku img {
+    width: 180px;
+    height: 200px;
+}
+.kakomi img {
+    margin-bottom: 10px;
+    max-width: none;
+}
+
+.kakomi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.kakomi.yokoake{
+    margin-right: 65px;
+    
+}
+.shokuin p {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ---4段目---- */
+
+.kakomi4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+}
+.kakomi4img {
+    display: flex;
+    margin-bottom: 10px
+
+}
+.kakomi4img img.casa {
+    margin-right: 20px;
+}
+
+.shokuin-danraku:nth-child(4) .kakomi{
+    margin-right: 20px;
+}
+
+
+
+/* ―――――――――――――――――――――————――――————
+　　　　　　入学のご案内
+ ―――――――――――――――――――――————――――———— */
+
+.nyugaku-annai h1 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+.nyugaku-nagare {
+    margin-bottom: 60px;
+}
+
+.setsumei {
+    width: 820px;
+    text-align: center;
+    border: 10px solid #FFECEB;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.setsumei section {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.setsumei h2 {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+.setsumei p {
+    text-align: justify;
+    line-height: 1.4;
+}
+
+.setsumei .hitobito{
+    width: 460px;
+    height: 34px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+}
+
+/* ---↓　見学の予約ボタン--- */
+
+.yoyakubotan {
+    width: 220px;
+    height: 80px;
+    margin: 20px auto 0 auto;
+    border-radius: 10px;
+    background-color: #FFECEB;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all  0.3s ease;
+
+}
+.yoyakubotan a{
+    height: 80px;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+}
+
+.yoyakubotan img {
+    width: 66px;
+    height: 66px;
+}
+
+.yoyakubotan p {
+    margin-left: 10px;
+}
+
+.yoyakubotan:hover {
+    background-color: #FFD5D3;
+}
+
+/* ---↑　見学の予約ボタン--- */
+
+
+/* ―――――――――――――――――――――————――――————
+　　　　　　学校生活
+ ―――――――――――――――――――――————――――———— */
+.school-main {
+    padding: 20px;
+    margin-bottom: 60px;
+}
+.school-main article {
+    margin-bottom: 24px;
+}
+.school-main h1 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.school-main article p {
+    margin-left: 16px;
+}
+.school-main section {
+    margin-left: 60px;
+    margin-bottom: 24px;
+}
+
+.school-main h2 {
+    font-size: 18px;
+    font-weight: bolder; 
+    margin-bottom: 10px;
+}
+
+.school-main p {
+    padding-left: 16px;
+    line-height: 1.4;
+    text-align: justify;
+}
+
+.school-article {
+    margin-bottom: 80px;
+}
+
+.school-article:last-child {
+    margin-bottom: 0;
+}
+
+
